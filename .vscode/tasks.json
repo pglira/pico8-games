@@ -6,13 +6,26 @@
         {
             "label": "labyrinth",
             "type": "shell",
-            "command": "pico8 labyrinth.p8"
+            "command": "pico8 -windowed 1 -home ${workspaceFolder} carts/labyrinth.p8",
+            "problemMatcher": []
+        },
+        {
+            "label": "lala",
+            "type": "shell",
+            "command": "pico8 -windowed 1 -home ${workspaceFolder} carts/lala.p8",
+            "problemMatcher": []
         },
         {
             "label": "run p8 file",
             "type": "shell",
             "command": "pico8 ${file}",
             "problemMatcher": []
-        }
+        },
+        {
+            "label": "export p8 file",
+            "type": "shell",
+            "command": "pico8 -export ${file} ${file}.png",
+            "problemMatcher": []
+        },
     ]
 }
