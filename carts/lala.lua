@@ -122,6 +122,7 @@ function _update()
         moveball()
         losedeadball()
     elseif not is_gameover and is_dead then
+        movepaddle()
         frames_since_dead = frames_since_dead + 1
         if frames_since_dead % 60 == 0 then
             is_dead = false
