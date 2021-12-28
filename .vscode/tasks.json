@@ -16,6 +16,12 @@
             "problemMatcher": []
         },
         {
+            "label": "game-of-life",
+            "type": "shell",
+            "command": "pico8 -windowed 1 -home ${workspaceFolder} carts/game-of-life.p8",
+            "problemMatcher": []
+        },
+        {
             "label": "run p8 file",
             "type": "shell",
             "command": "pico8 ${file}",

@@ -1,6 +1,6 @@
 # pico8 games
 
-Some pico 8 games I've made for fun.
+Some pico 8 games I've made with | for my children for fun.
 
 ## Games
 
@@ -12,6 +12,13 @@ Some pico 8 games I've made for fun.
 
 ![lala](carts/lala.p8.png)
 
+### Game of life
+
+![game-of-life](carts/game-of-life.p8.png)
+
 ## Notes
 
-- Save cartridge as ``p8.png`` with ``SAVE NAME-OF-GAME.P8.PNG`` in pico 8 console. This function seems not to be accessible from the pico8 binary.
+- To save a cartridge as ``p8.png``:
+  - run game, take screenshot with ``ctrl+7``, and leave game with ``esc``
+  - ``SAVE NAME-OF-GAME.P8.PNG`` in pico 8 console
+  -
