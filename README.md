@@ -21,4 +21,3 @@ Some pico 8 games I've made with | for my children for fun.
 - To save a cartridge as ``p8.png``:
   - run game, take screenshot with ``ctrl+7``, and leave game with ``esc``
   - ``SAVE NAME-OF-GAME.P8.PNG`` in pico 8 console
-  -
