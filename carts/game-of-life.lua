@@ -26,11 +26,11 @@ for y = 1, height do
 end
 
 -- initialize board with an r pentomino
-boards[1][60][64] = 1
-boards[1][60][65] = 1
-boards[1][61][63] = 1
-boards[1][61][64] = 1
-boards[1][62][64] = 1
+-- boards[1][60][64] = 1
+-- boards[1][60][65] = 1
+-- boards[1][61][63] = 1
+-- boards[1][61][64] = 1
+-- boards[1][62][64] = 1
 
 -- initialize board with random values
 -- for y = 1, height do
@@ -38,6 +38,15 @@ boards[1][62][64] = 1
 --         boards[1][y][x] = flr(rnd(2))
 --     end
 -- end
+
+-- initialize board where each n-th row is alive
+for y = 1, height do
+    for x = 1, width do
+        if y % 3 == 0 then
+           boards[1][y][x] = 1
+        end
+    end
+end
 
 cls()
 
