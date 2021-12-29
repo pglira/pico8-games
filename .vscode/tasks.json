@@ -22,6 +22,12 @@
             "problemMatcher": []
         },
         {
+            "label": "jakobs-train",
+            "type": "shell",
+            "command": "pico8 -windowed 1 -home ${workspaceFolder} carts/jakobs-train.p8",
+            "problemMatcher": []
+        },
+        {
             "label": "run p8 file",
             "type": "shell",
             "command": "pico8 ${file}",
@@ -37,6 +43,12 @@
             "label": "run current file",
             "type": "shell",
             "command": "${file}",
+            "problemMatcher": []
+        },
+        {
+            "label": "run pico8 without cart",
+            "type": "shell",
+            "command": "pico8 -windowed 1 -home ${workspaceFolder}",
             "problemMatcher": []
         },
     ]
