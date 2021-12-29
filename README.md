@@ -16,6 +16,10 @@ Some pico 8 games I've made with | for my children for fun.
 
 ![game-of-life](carts/game-of-life.p8.png)
 
+### Jakobs train
+
+![jakobs-train](carts/jakobs-train.p8.png)
+
 ## Notes
 
 - To save a cartridge as ``p8.png``:
