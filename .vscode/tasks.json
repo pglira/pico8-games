@@ -33,5 +33,11 @@
             "command": "pico8 -export ${file} ${file}.png",
             "problemMatcher": []
         },
+        {
+            "label": "run current file",
+            "type": "shell",
+            "command": "${file}",
+            "problemMatcher": []
+        },
     ]
 }
