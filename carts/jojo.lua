@@ -1,6 +1,5 @@
 -- jojo
 -- by philippus
-
 actor = {} -- all actors
 
 -- make an actor
@@ -41,22 +40,24 @@ function _init()
     -- make player
     pl = make_actor(0, 2, 2)
     pl.frames = 3
+    pl.has_yellow_key = false
+    pl.has_green_key = false
 
     -- bouncy ball
-    local ball = make_actor(32,8.5,11)
-    ball.dx=0.05
-    ball.dy=-0.1
-    ball.friction=0.02
-    ball.bounce=1
+    local ball = make_actor(32, 8.5, 11)
+    ball.dx = 0.05
+    ball.dy = -0.1
+    ball.friction = 0.02
+    ball.bounce = 1
 
     -- red ball: bounce forever
     -- (because no friction and
     -- max bounce)
-    local ball = make_actor(48,7,8)
-    ball.dx=-0.1
-    ball.dy=0.15
-    ball.friction=0
-    ball.bounce=1
+    local ball = make_actor(48, 7, 8)
+    ball.dx = -0.1
+    ball.dy = 0.15
+    ball.friction = 0
+    ball.bounce = 1
 
     -- treasure = coins
     for i = 0, 16 do
@@ -64,6 +65,18 @@ function _init()
         a.w = 0.25
         a.h = 0.25
     end
+
+    for i = 0, 3 do
+        for j = 0, 3 do
+            a = make_actor(5, 6.5 + i, 39.5 + j)
+            a.w = 0.25
+            a.h = 0.25
+        end
+    end
+
+    -- key
+    a = make_actor(8, 1.5, 30.5)
+    a = make_actor(24, 62.5, 14.5)
 
 end
 
@@ -73,6 +86,19 @@ end
 function solid(x, y)
     -- grab the cel value
     val = mget(x, y)
+
+    -- if cel is a key (flag 7)
+    if fget(val, 7) then
+        if val == 7 and pl.has_yellow_key then -- yellow key
+            mset(x, y, 16)
+            return false
+        elseif val == 23 and pl.has_green_key then -- yellow key
+            mset(x, y, 16)
+            return false
+        else
+            return true
+        end
+    end
 
     -- check if flag 1 is set, i.e. it is solid
     return fget(val, 1)
@@ -152,13 +178,24 @@ end
 -- indicating that the two
 -- actors shouldn't bounce off
 -- each other
-
 function collide_event(a1, a2)
 
     -- player collects treasure
     if (a1 == pl and a2.k == 5) then
         del(actor, a2)
         sfx(3)
+        return true
+    end
+
+    -- player collects key
+    if (a1 == pl and (a2.k == 8 or a2.k == 24)) then
+        if a2.k == 8 then
+            pl.has_yellow_key = true
+        elseif a2.k == 24 then
+            pl.has_green_key = true
+        end
+        del(actor, a2)
+        sfx(4)
         return true
     end
 
@@ -241,4 +278,5 @@ function _draw()
     map()
     foreach(actor, draw_actor)
 
+    print("fps = " .. stat(7))
 end
