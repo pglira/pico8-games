@@ -1,3 +1,6 @@
+-- jakobs-train
+-- by pippo & sons
+
 function _init()
     cls()
     switch_state = 0

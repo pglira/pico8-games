@@ -1,5 +1,6 @@
 -- jojo
--- by philippus
+-- by pippo & sons
+
 actor = {} -- all actors
 
 -- make an actor

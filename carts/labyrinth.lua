@@ -1,3 +1,6 @@
+-- labyrinth
+-- by pippo & sons
+
 function is_wall(x, y)
     return mget(x / 8, y / 8) == 002
 end

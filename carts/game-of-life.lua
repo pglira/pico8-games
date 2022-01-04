@@ -1,3 +1,6 @@
+-- game-of-life
+-- by pippo & sons
+
 -- get value of a board
 function get(bi, x, y)
     if ((x < 1) or (x > width) or (y < 1) or (y > height)) then

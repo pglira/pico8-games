@@ -1,3 +1,6 @@
+-- lala
+-- by pippo & sons
+
 function start()
     -- paddle
     padx = 52

@@ -1,7 +1,6 @@
 pico-8 cartridge // http://www.pico-8.com
 version 34
 __lua__
-
 #include game-of-life.lua
 
 __gfx__
